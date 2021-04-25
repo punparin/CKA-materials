@@ -35,5 +35,3 @@ k create deploy httpd-frontend --replicas=3 --image=httpd:2.4-alpine
 ```sh
 k expose po redis --port=6379 --name redis-service
 ```
-
-## 

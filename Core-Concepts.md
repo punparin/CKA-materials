@@ -15,6 +15,9 @@ k delete po po --grace-period=0 --force
 
 # Use selector to query pods
 k get po -l "env=dev"
+
+# Execute command in pod
+k exec -it app -n elastic-stack -- sh
 ```
 
 ## Replica Set
@@ -35,3 +38,10 @@ k create deploy httpd-frontend --replicas=3 --image=httpd:2.4-alpine
 ```sh
 k expose po redis --port=6379 --name redis-service
 ```
+
+## ConfigMap
+
+```sh
+k create configmap webapp-config-map --from-literal=APP_COLOR=darkblue
+```
+

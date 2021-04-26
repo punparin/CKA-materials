@@ -35,6 +35,21 @@ set tabstop=2
 ```sh
 # To find sth in a file (not case-sensitive)
 grep -i staticpod /var/lib/kubelet/config.yaml
+
+# List running process
+ps -ef
+
+# List running containers
+dk ps
+
+# Kubeconfig
+cat $HOME/.kube/config
+
+# Count the number of po
+k get po --no-headers | wc -l
+
+# Find api group of api resources
+k api-resources
 ```
 
 ## Object Short Name

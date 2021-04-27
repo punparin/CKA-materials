@@ -69,3 +69,16 @@ k api-resources
 | rs         | replicasets            |
 | svc        | services               |
 
+## Formatting
+
+```sh
+$ k get deploy -n admin2406 --output=custom-columns="DEPLOYMENT:.metadata.name,CONTAINER_IMAGE:.spec.template.spec.containers.*.image,READY_REPLICAS:.spec.replicas,NAMESPACE:.metadata.namespace"$ 
+
+DEPLOYMENT   CONTAINER_IMAGE   READY_REPLICAS   NAMESPACE
+deploy1      nginx             1                admin2406
+deploy2      nginx:alpine      1                admin2406
+deploy3      nginx:1.16        1                admin2406
+deploy4      nginx:1.17        1                admin2406
+deploy5      nginx:latest      1                admin2406
+```
+

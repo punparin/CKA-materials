@@ -62,7 +62,7 @@ spec:
     args: ["--color", "pink"]
 ```
 
-> Command to run is `python app.py --color green`
+> Command to run is `python app.py --color pink`
 
 ## InitContainers
 

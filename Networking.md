@@ -157,3 +157,4 @@ I0427 14:34:23.292639       1 server_others.go:186] Using iptables Proxier.
 ## Ingress
 
 > Beware nginx.ingress.kubernetes.io/rewrite-target: /
+

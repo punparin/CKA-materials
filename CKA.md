@@ -4,12 +4,13 @@
 echo “source <(kubectl completion bash)” >> ~/.bashrc
 alias k=kubectl
 complete -F __start_kubectl k
-alias kn='kubectl config set-context --current'
+alias kn='kubectl config set-context --current --namespace'
 alias knc='kubectl config view --minify | grep namespace:'
 alias kx='kubectl config use-context'
 alias kd='kubectl delete --grace-period=0 --force'
 alias kdc='kubectl describe'
 alias dk='docker'
+export do="-o yaml --dry-run=client"
 
 vim ~/.vimrc
 set nu

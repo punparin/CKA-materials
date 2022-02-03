@@ -128,10 +128,15 @@ $ ip addr show ens3 # 172.17.0.68/16
     inet6 fe80::42:acff:fe11:44/64 scope link 
        valid_lft forever preferred_lft forever
 
-# IP address range for pods
+# IP address range for pods (weave-net)
 $ k logs weave-net-vbl87 weave -n kube-system | grep ipalloc-range
 
 ipalloc-range:10.32.0.0/12
+
+# IP address range for pods (flannel)
+$ k describe cm kube-flannel-cfg | grep -i network
+
+"Network": "172.16.0.0/14",
 
 # IP address range for services
 $ k describe po kube-apiserver-controlplane -n kube-system | grep ip

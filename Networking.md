@@ -146,6 +146,8 @@ $ k describe po kube-apiserver-controlplane -n kube-system | grep ip
 # IP address range for services (generic)
 $ echo '{"apiVersion":"v1","kind":"Service","metadata":{"name":"tst"},"spec":{"clusterIP":"1.1.1.1","ports":[{"port":443}]}}' | kubectl apply -f - 2>&1 | sed 's/.*valid IPs is //'
 
+172.30.0.0/15
+
 # Type of proxy of kube-proxy
 $ k logs kube-proxy-qkr25 -n kube-system   
 
